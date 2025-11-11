@@ -8,6 +8,18 @@ import uuid
 from dialogflow_api import detectar_intencao
 from bd import buscar_resposta
 
+
+import os, json
+from google.oauth2 import service_account
+
+# Lê a variável de ambiente
+credenciais_json = os.getenv("GOOGLE_CREDENTIALS")
+
+if credenciais_json:
+    credenciais = service_account.Credentials.from_service_account_info(json.loads(credenciais_json))
+else:
+    credenciais = service_account.Credentials.from_service_account_file("chave-maria.json")
+
 app = FastAPI()
 PROJECT_ID = "maria-wfbd"
 
