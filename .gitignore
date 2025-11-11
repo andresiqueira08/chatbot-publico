@@ -1,0 +1,20 @@
+# Arquivos de credenciais
+chave-maria.json
+
+# Banco de dados local
+*.db
+
+# Cache do Python
+__pycache__/
+
+# Arquivos do ngrok
+ngrok
+ngrok.exe
+ngrok.yml
+
+# Arquivos de ambiente
+.env
+
+# Editor
+.vscode/
+.idea/
