@@ -18,3 +18,4 @@ ngrok.yml
 # Editor
 .vscode/
 .idea/
+src/backend/chave-maria.json
