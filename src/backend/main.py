@@ -5,20 +5,20 @@ import os
 import uuid
 
 # Funções 
-from dialogflow_api import detectar_intencao
-from bd import buscar_resposta
+from chatbot_publico.src.backend.dialogflow_api import detectar_intencao
+from chatbot_publico.src.backend.bd import buscar_resposta
 
 
 import os, json
 from google.oauth2 import service_account
 
 # Lê a variável de ambiente
-credenciais_json = os.getenv("GOOGLE_CREDENTIALS")
+import json
+import os
+from google.oauth2 import service_account
 
-if credenciais_json:
-    credenciais = service_account.Credentials.from_service_account_info(json.loads(credenciais_json))
-else:
-    credenciais = service_account.Credentials.from_service_account_file("chave-maria.json")
+keyfile_dict = json.loads(os.environ["KEYFILE_JSON"])
+credenciais = service_account.Credentials.from_service_account_info(keyfile_dict)
 
 app = FastAPI()
 PROJECT_ID = "maria-wfbd"
